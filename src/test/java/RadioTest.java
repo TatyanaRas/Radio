@@ -5,8 +5,8 @@ public class RadioTest {
     @Test
     public void radioStationsChanget() {
         Radio rad = new Radio();
-        rad.setNumberCurrentRadio(0);
-        int expected = 1;
+        rad.setNumberCurrentRadio(1);
+        int expected = 2;
         int actual = rad.getNumberCurrentRadio();
 
         Assertions.assertEquals(expected, actual);

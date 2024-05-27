@@ -4,6 +4,7 @@ public class Radio {
     public int increaseVolume;
 
     public int getNumberCurrentRadio() {
+
         return numberCurrentRadio;
     }
 
@@ -15,18 +16,21 @@ public class Radio {
         if (newNumberCurrentRadio > 9) {
             return;
         }
+        if (newNumberCurrentRadio > 0) {
+            newNumberCurrentRadio = newNumberCurrentRadio + 1;
+        }
         numberCurrentRadio = newNumberCurrentRadio;
-
     }
+
 
     public void next() {
         numberCurrentRadio = 9;
         if (numberCurrentRadio > 9) {
             numberCurrentRadio = 0;
         }
-        if (numberCurrentRadio > 0) {
-            numberCurrentRadio = numberCurrentRadio + 1;
-        }
+      //  if (numberCurrentRadio > 0) {
+       //     numberCurrentRadio = numberCurrentRadio + 1;
+     //   }
     }
 
     public void prev() {
