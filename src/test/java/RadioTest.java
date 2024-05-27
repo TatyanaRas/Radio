@@ -5,8 +5,8 @@ public class RadioTest {
     @Test
     public void radioStationsChanget() {
         Radio rad = new Radio();
-        rad.setNumberCurrentRadio(1);
-        int expected = 2;
+        rad.setNumberCurrentRadio(10);
+        int expected = 0;
         int actual = rad.getNumberCurrentRadio();
 
         Assertions.assertEquals(expected, actual);
@@ -16,7 +16,8 @@ public class RadioTest {
     public void shouldSetToMaxNext() {
 
         Radio rad = new Radio();
-        rad.next();
+        rad.next(8);//9 0 5
+
         int expected = 9;
         int actual = rad.getNumberCurrentRadio();
         Assertions.assertEquals(expected, actual);
@@ -26,9 +27,9 @@ public class RadioTest {
     public void shouldNoSetMaxNet() {
 
         Radio rad = new Radio();
-        rad.setNumberCurrentRadio(9);
+        rad.setNumberCurrentRadio(1);//9
 
-        int expected = 9;
+        int expected = 2;
         int actual = rad.getNumberCurrentRadio();
 
         Assertions.assertEquals(expected, actual);

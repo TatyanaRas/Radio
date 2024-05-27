@@ -1,7 +1,8 @@
 public class Radio {
     //радиостанции
-    public int numberCurrentRadio;
-    public int increaseVolume;
+    private int numberCurrentRadio;
+    private int increaseVolume;
+    private int currentVolume;
 
     public int getNumberCurrentRadio() {
 
@@ -16,52 +17,56 @@ public class Radio {
         if (newNumberCurrentRadio > 9) {
             return;
         }
-        if (newNumberCurrentRadio > 0) {
-            newNumberCurrentRadio = newNumberCurrentRadio + 1;
-        }
+       // if (newNumberCurrentRadio > 0) {
+         //   newNumberCurrentRadio = newNumberCurrentRadio + 1;
+      //  }
         numberCurrentRadio = newNumberCurrentRadio;
     }
 
 
     public void next() {
-        numberCurrentRadio = 9;
-        if (numberCurrentRadio > 9) {
+        //numberCurrentRadio = 9;
+        if (numberCurrentRadio > 9) {//==
             numberCurrentRadio = 0;
         }
-      //  if (numberCurrentRadio > 0) {
-       //     numberCurrentRadio = numberCurrentRadio + 1;
-     //   }
+       // if (numberCurrentRadio > 0) {//
+       else {     numberCurrentRadio = numberCurrentRadio + 1;
+        }
     }
 
     public void prev() {
-        numberCurrentRadio = 0;
-        if (numberCurrentRadio < 9) {
-            numberCurrentRadio = numberCurrentRadio + 1;
+        //numberCurrentRadio = 0;
+        if (numberCurrentRadio < 0) {
+            numberCurrentRadio = numberCurrentRadio - 1;
+        }
+        else {
+            numberCurrentRadio = 9;
         }
     }
 
 
     //громкость звука
     public int increaseVolume() {
-        int currentVolume;
-        currentVolume = 0;
+        // int currentVolume;
+        // currentVolume = 0;
         if (currentVolume < 100) {//если меньше 100, шаг +1
             currentVolume = currentVolume + 1;
         }
-        return currentVolume;
+        // return currentVolume;
     }
 
+
     public void maxVolume() {
-        int currentVolume;
-        currentVolume = 100;// если текущая 100, при увеличении выход из метода
+      //  int currentVolume;
+       // currentVolume = 100;// если текущая 100, при увеличении выход из метода
         if (currentVolume > 100) {
             return;
         }
     }
 
     public void reduceVolume() {
-        int currentVolume;
-        currentVolume = 99;
+      //  int currentVolume;
+       // currentVolume = 99;
         if (currentVolume < 100) {//если текущая 99, то шаг +1
             currentVolume = currentVolume + 1;
         }
@@ -69,8 +74,9 @@ public class Radio {
     }
 
     public void minVolume() {
-        int currentVolume;
-        currentVolume = 0;
+       // int currentVolume;
+
+
         if (currentVolume < 0) { // если текущая 0 и уменьшаем, выход из метода
             return;
         }
