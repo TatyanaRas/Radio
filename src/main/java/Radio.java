@@ -1,12 +1,12 @@
 public class Radio {
     //радиостанции
-   // public int setIncreaseVolume;
-    public int numberCurrentRadio;
-    public int currentVolume;
-    public int ReduceVolume;
-//    public int IncreaseVolume;
-   // public int ReduceVolume;
 
+    private int numberCurrentRadio;
+  //  public int currentVolume;
+  //  public int ReduceVolume;
+    private int maxMinVolume;
+
+//радиостанции
     public int getNumberCurrentRadio() {
 
         return numberCurrentRadio;
@@ -20,63 +20,69 @@ public class Radio {
         if (newNumberCurrentRadio > 9) {
             return;
         }
-        // if (newNumberCurrentRadio > 0) {
-        //   newNumberCurrentRadio = newNumberCurrentRadio + 1;
-        //  }
+        
         numberCurrentRadio = newNumberCurrentRadio;
     }
 
 
     public void next() {
-        //numberCurrentRadio = 9;
-        if (numberCurrentRadio == 9) {//==
-            numberCurrentRadio = 0;
-        }
-        // if (numberCurrentRadio > 0) {//
-        else {
+
+        if (numberCurrentRadio != 9) {//== !=
             numberCurrentRadio = numberCurrentRadio + 1;//
+        }
+
+        else {
+            numberCurrentRadio = 0;//
         }
     }
 
-    public void prev(int i) {
-        //numberCurrentRadio = 0;
-        if (numberCurrentRadio < 0) {
+    public void prev() {
+
+        if (numberCurrentRadio != 0) {
             numberCurrentRadio = numberCurrentRadio - 1;
         } else {
+
             numberCurrentRadio = 9;
         }
     }
 
 
     //громкость звука
-    public int increaseVolume(int i) {
-        // int currentVolume;
-        // currentVolume = 0;
-        if (currentVolume < 100) {//если меньше 100, шаг +1
-            currentVolume = currentVolume + 1;
-        } else {
-
-            return;
-        }
+    public int getMaxMinVolume() {
+        return maxMinVolume;
     }
 
-    public void maxMinVolume() {
+    public void setMaxMinVolume(int newMaxMinVolume) {//проверка на пределы громкости
         // если текущая 100, при увеличении выход из метода
-        if (currentVolume > 100) {
+        if (newMaxMinVolume > 100) {
             return;
         }
-        if (currentVolume < 0) { // если текущая 0 и уменьшаем, выход из метода
+
+        if (newMaxMinVolume < 0) { // если текущая 0 и уменьшаем, выход из метода
             return;
+        }
+        maxMinVolume = newMaxMinVolume;
+    }
+
+    public void increaseVolume() {//увеличение громкости
+        if (maxMinVolume < 100) {//если меньше 100, шаг +1
+          //  maxMinVolume = 0;
+            maxMinVolume = maxMinVolume + 1;
+        } else {
+
+            maxMinVolume = 100;
         }
     }
 
 
-    public void ReduceVolume() {
 
-        if (currentVolume < 100) {//если текущая 99, то шаг +1
-            currentVolume = currentVolume + 1;
+
+    public void reduceVolume() {//уменьшение громкости
+
+        if (maxMinVolume != 0) {
+            maxMinVolume = maxMinVolume - 1;
         } else {
-            return;
+            maxMinVolume = 0;
         }
     }
 
