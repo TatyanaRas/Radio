@@ -2,11 +2,11 @@ public class Radio {
     //радиостанции
 
     private int numberCurrentRadio;
-  //  public int currentVolume;
-  //  public int ReduceVolume;
+    //  public int currentVolume;
+    //  public int ReduceVolume;
     private int maxMinVolume;
 
-//радиостанции
+    //радиостанции
     public int getNumberCurrentRadio() {
 
         return numberCurrentRadio;
@@ -20,19 +20,17 @@ public class Radio {
         if (newNumberCurrentRadio > 9) {
             return;
         }
-        
-        numberCurrentRadio = newNumberCurrentRadio;
+
+        this.numberCurrentRadio = newNumberCurrentRadio;
     }
 
 
     public void next() {
 
         if (numberCurrentRadio != 9) {//== !=
-            numberCurrentRadio = numberCurrentRadio + 1;//
-        }
-
-        else {
-            numberCurrentRadio = 0;//
+            numberCurrentRadio = numberCurrentRadio + 1;
+        } else {
+            numberCurrentRadio = 0;   //
         }
     }
 
@@ -61,20 +59,18 @@ public class Radio {
         if (newMaxMinVolume < 0) { // если текущая 0 и уменьшаем, выход из метода
             return;
         }
-        maxMinVolume = newMaxMinVolume;
+        this.maxMinVolume = newMaxMinVolume;
     }
 
     public void increaseVolume() {//увеличение громкости
-        if (maxMinVolume < 100) {//если меньше 100, шаг +1
-          //  maxMinVolume = 0;
+        if (maxMinVolume != 100) {//если меньше 100, шаг +1
+            //  maxMinVolume = 0;
             maxMinVolume = maxMinVolume + 1;
         } else {
 
             maxMinVolume = 100;
         }
     }
-
-
 
 
     public void reduceVolume() {//уменьшение громкости
