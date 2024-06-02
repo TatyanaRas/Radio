@@ -1,10 +1,35 @@
+package ru.netology.servises.radio;
+
 public class Radio {
     //радиостанции
 
-    private int numberCurrentRadio;
-    //  public int currentVolume;
-    //  public int ReduceVolume;
+    private int minRadioStations = 0;
+    private int maxRadioStations = 15;
+    //   private  int minVolume;
+//   private int maxVolume;
+    private int numberCurrentRadio = minRadioStations;//может макс
     private int maxMinVolume;
+
+    public Radio(int minRadioStations, int maxRadioStations) {
+
+        this.minRadioStations = minRadioStations;
+        this.maxRadioStations = maxRadioStations;
+        this.numberCurrentRadio = minRadioStations;
+
+    }
+
+/*public Radio(int minVolume, int maxVolume) {
+
+this.minVolume = minVolume;
+this.maxVolume = maxVolume;
+this.maxMinVolume = maxVolume;
+
+}*/
+
+
+    public Radio(int size) {
+        maxRadioStations = minRadioStations + size;
+    }
 
     //радиостанции
     public int getNumberCurrentRadio() {
@@ -12,12 +37,21 @@ public class Radio {
         return numberCurrentRadio;
     }
 
+    public int getMaxRadioStations() {
+        return maxRadioStations;
+    }
+
+    public int getMinRadioStations() {
+        return minRadioStations;
+    }
+
+
     public void setNumberCurrentRadio(int newNumberCurrentRadio) {
 
-        if (newNumberCurrentRadio < 0) {
+        if (newNumberCurrentRadio < minRadioStations) {
             return;
         }
-        if (newNumberCurrentRadio > 9) {
+        if (newNumberCurrentRadio > maxRadioStations) {
             return;
         }
 
@@ -25,22 +59,30 @@ public class Radio {
     }
 
 
-    public void next() {
+   public void next() {
 
-        if (numberCurrentRadio != 9) {//== !=
-            numberCurrentRadio = numberCurrentRadio + 1;
+        if (numberCurrentRadio == maxRadioStations) {//== !=
+            numberCurrentRadio = minRadioStations;//numberCurrentRadio - 1;//+1
         } else {
-            numberCurrentRadio = 0;   //
+            numberCurrentRadio = maxRadioStations - 1; //+ 1; //0; //minRadioStations;   //
         }
     }
+ /* public void next() {
+
+      if (numberCurrentRadio != maxRadioStations) {//== !=
+          numberCurrentRadio =minRadioStations;
+      } else {
+          numberCurrentRadio = maxRadioStations - 1;   //
+      }
+  }*/
 
     public void prev() {
 
-        if (numberCurrentRadio != 0) {
+        if (numberCurrentRadio != minRadioStations) {
             numberCurrentRadio = numberCurrentRadio - 1;
         } else {
 
-            numberCurrentRadio = 9;
+            numberCurrentRadio = maxRadioStations;
         }
     }
 
