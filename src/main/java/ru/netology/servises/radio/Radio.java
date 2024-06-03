@@ -18,13 +18,14 @@ public class Radio {
 
     }
 
-    public Radio(int minRadioStations, int maxRadioStations) {
+
+  /*  public Radio(int minRadioStations, int maxRadioStations) {
 
         this.minRadioStations = minRadioStations;
         this.maxRadioStations = maxRadioStations;
         this.numberCurrentRadio = minRadioStations;
 
-    }
+    }*/
 
 
     //радиостанции

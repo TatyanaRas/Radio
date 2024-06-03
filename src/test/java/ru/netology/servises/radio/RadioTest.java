@@ -136,7 +136,7 @@ public class RadioTest {
     @Test
     public void shouldMaxVolume() {
 
-        Radio rad = new Radio(0, 100);
+        Radio rad = new Radio( 100);
         rad.setMaxMinVolume(200);// = 100;
 
         int expected = 0;
@@ -149,7 +149,7 @@ public class RadioTest {
     @Test
     public void shouldMinVolume() {
 
-        Radio rad = new Radio(0, 100);
+        Radio rad = new Radio( 100);
         rad.setMaxMinVolume(-1);// = 100;
 
         int expected = 0;
@@ -162,7 +162,7 @@ public class RadioTest {
 
     @Test
     public void turnVolume1() {
-        Radio rad = new Radio(0, 100);//
+        Radio rad = new Radio( 100);//
         rad.setMaxMinVolume(1);
 
         rad.increaseVolume();
@@ -175,7 +175,7 @@ public class RadioTest {
 
     @Test
     public void turnVolume2() {
-        Radio rad = new Radio(0, 100);//проверка на текущую громкость
+        Radio rad = new Radio( 100);//проверка на текущую громкость
         rad.setMaxMinVolume(0);
 
         rad.increaseVolume();
@@ -188,7 +188,7 @@ public class RadioTest {
 
     @Test
     public void turnVolume3() {
-        Radio rad = new Radio(0, 100);//проверка на текущую громкость
+        Radio rad = new Radio(100);//проверка на текущую громкость
         rad.setMaxMinVolume(50);
 
         rad.increaseVolume();
@@ -201,7 +201,7 @@ public class RadioTest {
 
     @Test
     public void turnVolume4() {
-        Radio rad = new Radio(0, 100);//проверка на текущую громкость
+        Radio rad = new Radio( 100);//проверка на текущую громкость
         rad.setMaxMinVolume(99);
 
         rad.increaseVolume();
@@ -214,7 +214,7 @@ public class RadioTest {
 
     @Test
     public void turnVolume5() {
-        Radio rad = new Radio(0, 100);//проверка на текущую громкость
+        Radio rad = new Radio(100);//проверка на текущую громкость
         rad.setMaxMinVolume(100);
 
         rad.increaseVolume();
@@ -227,7 +227,7 @@ public class RadioTest {
 
     @Test
     public void turnVolume6() {
-        Radio rad = new Radio(0, 100);//проверка на текущую громкость
+        Radio rad = new Radio(100);//проверка на текущую громкость
         rad.setMaxMinVolume(101);
 
         rad.increaseVolume();
@@ -240,7 +240,7 @@ public class RadioTest {
 
     @Test
     public void turnVolume7() {
-        Radio rad = new Radio(0, 100);//проверка на текущую громкость
+        Radio rad = new Radio(100);//проверка на текущую громкость
         rad.setMaxMinVolume(200);
 
         rad.increaseVolume();
@@ -255,7 +255,7 @@ public class RadioTest {
 
     public void turnDownVolume1() {//уменьшение громкости
 
-        Radio rad = new Radio(0, 100);
+        Radio rad = new Radio( 100);
         rad.setMaxMinVolume(0);
 
         rad.reduceVolume();
@@ -268,7 +268,7 @@ public class RadioTest {
 
     public void turnDownVolume2() {//уменьшение громкости
 
-        Radio rad = new Radio(0, 100);
+        Radio rad = new Radio( 100);
         rad.setMaxMinVolume(1);
 
         rad.reduceVolume();
@@ -281,7 +281,7 @@ public class RadioTest {
 
     public void turnDownVolume3() {//уменьшение громкости
 
-        Radio rad = new Radio(0, 100);
+        Radio rad = new Radio( 100);
         rad.setMaxMinVolume(50);
 
         rad.reduceVolume();
@@ -294,7 +294,7 @@ public class RadioTest {
 
     public void turnDownVolume4() {//уменьшение громкости
 
-        Radio rad = new Radio(0, 100);
+        Radio rad = new Radio( 100);
         rad.setMaxMinVolume(100);
 
         rad.reduceVolume();
@@ -307,7 +307,7 @@ public class RadioTest {
 
     public void turnDownVolume5() {//уменьшение громкости
 
-        Radio rad = new Radio(0, 100);
+        Radio rad = new Radio( 100);
         rad.setMaxMinVolume(99);
 
         rad.reduceVolume();
