@@ -24,7 +24,7 @@ public class RadioTest {
 
         Radio rad = new Radio(10);
 
-        //   rad.setNumberCurrentRadio(12);
+        rad.setNumberCurrentRadio(12);
 
         int expected = 0;
         int actual = rad.getNumberCurrentRadio();
@@ -32,20 +32,19 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-   @Test
+    @Test
     public void radioStationsMinChanget1() {
 
-        Radio rad = new Radio( 10);
+        Radio rad = new Radio(10);
 
-        rad.setNumberCurrentRadio(10);
+        rad.setNumberCurrentRadio(-1);
 
-        int expected = 10;
+        int expected = 0;
         int actual = rad.getNumberCurrentRadio();
-       Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
 
 
     }
-
 
 
     //увеличиваем номер радиостанции
@@ -93,7 +92,7 @@ public class RadioTest {
 
         Radio rad = new Radio(10);
 
-         rad.setNumberCurrentRadio(10);
+        rad.setNumberCurrentRadio(10);
         rad.next();//
 
         int expected = 0;

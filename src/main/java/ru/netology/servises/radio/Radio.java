@@ -5,8 +5,7 @@ public class Radio {
 
     private int minRadioStations = 0;
     private int maxRadioStations = 15;
-    //   private  int minVolume;
-//   private int maxVolume;
+
     private int numberCurrentRadio = minRadioStations;//может макс
     private int maxMinVolume;
 
@@ -17,14 +16,6 @@ public class Radio {
         this.numberCurrentRadio = minRadioStations;
 
     }
-
-/*public Radio(int minVolume, int maxVolume) {
-
-this.minVolume = minVolume;
-this.maxVolume = maxVolume;
-this.maxMinVolume = maxVolume;
-
-}*/
 
 
     public Radio(int size) {
@@ -59,22 +50,14 @@ this.maxMinVolume = maxVolume;
     }
 
 
-   public void next() {
+    public void next() {
 
-        if (numberCurrentRadio == maxRadioStations) {//== !=
-            numberCurrentRadio = minRadioStations;//numberCurrentRadio - 1;//+1
+        if (numberCurrentRadio == maxRadioStations) {
+            numberCurrentRadio = minRadioStations;
         } else {
-            numberCurrentRadio = maxRadioStations - 1; //+ 1; //0; //minRadioStations;   //
+            numberCurrentRadio = maxRadioStations - 1;
         }
     }
- /* public void next() {
-
-      if (numberCurrentRadio != maxRadioStations) {//== !=
-          numberCurrentRadio =minRadioStations;
-      } else {
-          numberCurrentRadio = maxRadioStations - 1;   //
-      }
-  }*/
 
     public void prev() {
 
