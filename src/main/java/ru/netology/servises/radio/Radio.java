@@ -4,10 +4,19 @@ public class Radio {
     //радиостанции
 
     private int minRadioStations = 0;
-    private int maxRadioStations = 15;
+    private int maxRadioStations;// = 10;
 
     private int numberCurrentRadio = minRadioStations;//может макс
     private int maxMinVolume;
+
+    public Radio(int size) {
+        maxRadioStations = minRadioStations + size;
+    }
+
+    public Radio() {
+        maxRadioStations = 10;
+
+    }
 
     public Radio(int minRadioStations, int maxRadioStations) {
 
@@ -17,10 +26,6 @@ public class Radio {
 
     }
 
-
-    public Radio(int size) {
-        maxRadioStations = minRadioStations + size;
-    }
 
     //радиостанции
     public int getNumberCurrentRadio() {

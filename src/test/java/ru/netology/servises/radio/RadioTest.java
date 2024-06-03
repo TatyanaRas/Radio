@@ -11,11 +11,11 @@ public class RadioTest {
 
     public void currentStations() {//текущая станция
 
-        Radio rad = new Radio(25);
+        Radio rad = new Radio();
 
 
         Assertions.assertEquals(0, rad.getMinRadioStations());
-        Assertions.assertEquals(25, rad.getMaxRadioStations());
+        Assertions.assertEquals(10, rad.getMaxRadioStations());
 
     }
 
